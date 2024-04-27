@@ -1,0 +1,1 @@
+oh-my-posh init pwsh --config 'C:\Users\theis\AppData\Local\Programs\oh-my-posh\themes\jblab_2021.omp.json' | Invoke-Expression
