@@ -1,0 +1,237 @@
+// vi:ft=jsonc
+{
+    "layer": "top",
+    "position": "top",
+    
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window",
+    ],
+    
+    "modules-center": [
+        "clock#date",
+        "clock#time"
+    ],
+    
+    "modules-right": [
+        "custom/arrow9",
+        "tray",
+        "group/power-mode",
+        "group/network",
+        "group/memory",
+        "group/cpu",
+        "group/temperature",
+        "group/audio",
+        "group/battery",
+        "group/power-button"
+    ],
+    
+    // Modules configuration
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 60,
+        "tooltip": false
+    },
+    
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "disable-scroll-wraparound": true,
+        "on-click": "activate"
+    },
+    
+    "clock#time": {
+        "interval": 10,
+        "format": " {:%H:%M}",
+        "tooltip": false
+    },
+    
+    "clock#date": {
+        "interval": 20,
+        "format": " {:%a %d %b}",
+        "on-click": "flatpak run org.gnome.Calendar",
+        "tooltip": false
+    },
+
+    "group/battery": {
+        "orientation": "horizontal",
+        "modules": ["custom/arrow2", "battery"]
+    },
+
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-full": " {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+    
+    "tray": {
+        "icon-size": 16,
+        "spacing": 4
+    },
+
+    "custom/endpoint":{
+        "format": "|",
+        "tooltip": false
+    },
+    
+    "custom/expander": {
+        "format": "",
+        "tooltip": false,
+    },
+
+    "group/expander": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-to-left": true,
+            "click-to-reveal": true
+        },
+        "modules": ["custom/expander", "network", "memory", "cpu", "temperature", "custom/endpoint"],
+    },
+
+    "group/network": {
+        "orientation": "horizontal",
+        "modules": ["custom/arrow7", "network"]
+    },
+
+    "group/memory": {
+        "orientation": "horizontal",
+        "modules": ["custom/arrow6", "memory"]
+    },
+
+    "group/cpu": {
+        "orientation": "horizontal",
+        "modules": ["custom/arrow5", "cpu"]
+    },
+
+    "group/temperature": {
+        "orientation": "horizontal",
+        "modules": ["custom/arrow4", "temperature"]
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": " {used:0.1f}G/{total:0.1f}G",
+        "tooltip": false
+    },
+    
+    "cpu": {
+        "interval": 5,
+        "format": " {usage}%",
+        "tooltip": false
+    },
+    
+    "temperature": {
+        "interval": 5,
+        "format": " {temperatureC}°C",
+        "tooltip": false
+    },
+
+    "group/audio": {
+        "orientation": "horizontal",
+        "modules": ["custom/arrow3", "pulseaudio"]
+    },
+
+    "pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{icon} {volume}%",
+		"format-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", ""]
+		},
+		"scroll-step": 1,
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"tooltip": false
+	},
+
+    "network": {
+		"interval": 5,
+		"format-wifi": " {essid}",
+		"format-ethernet": " {ifname}",
+		"format-disconnected": "No connection",
+		"format-alt": " {ipaddr}/{cidr}",
+		"tooltip": false
+	},
+    
+    "group/power-mode": {
+        "orientation": "horizontal",
+        "modules": ["custom/arrow8", "custom/power-mode"]
+    },
+
+    "custom/power-mode": {
+        "exec": "~/.config/waybar/power-mode.sh",
+        "return-type": "json",
+        "interval": 5,
+        "on-click": "powerprofilesctl set $(powerprofilesctl get | grep -q 'power-saver' && echo 'balanced' || (powerprofilesctl get | grep -q 'balanced' && echo 'performance' || echo 'power-saver'))",
+        "format": {},
+        "tooltip": true
+    },
+
+    "group/power-button": {
+        "orientation": "horizontal",
+        "modules": ["custom/arrow1", "custom/power-button"]
+    },
+    
+    "custom/power-button": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
+    "custom/arrow1": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow2": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow3": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow4": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow5": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow6": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow7": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow8": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow9": {
+        "format": "",
+        "tooltip": false
+    }
+}

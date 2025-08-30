@@ -1,0 +1,129 @@
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    font-family: "FiraCode Nerd Font", "JetBrains Mono", sans-serif;
+    font-size: 14pt;
+}
+
+window#waybar {
+    background: transparent;
+    transition: background-color 0.2s ease;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#waybar.empty #window {
+    background-color: transparent;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: transparent;
+    color: @text-light;
+    min-height: 0px;
+}
+
+#custom-power-button {
+    background: @error;
+    padding-right: 16px;
+}
+
+#custom-arrow1 {
+    background: @warning-100;
+    color: @error;
+    font-size: 16pt;
+}
+
+#battery {
+    background: @warning-100;
+    padding-right: 4px;
+}
+
+#custom-arrow2 {
+    background: @warning;
+    color: @warning-100;
+    font-size: 16pt;
+}
+
+#pulseaudio {
+    background: @warning;
+    padding-right: 4px;
+}
+
+#custom-arrow3 {
+    background: @success;
+    color: @warning;
+    font-size: 16pt;
+}
+
+#temperature {
+    background: @success;
+    padding-right: 4px;
+}
+
+#custom-arrow4 {
+    background: @accent;
+    color: @success;
+    font-size: 16pt;
+}
+
+#cpu {
+    background: @accent;
+    padding-right: 4px;
+}
+
+#custom-arrow5 {
+    background: @accent-content;
+    color: @accent;
+    font-size: 16pt;
+}
+
+#memory {
+    background: @accent-content;
+    padding-right: 4px;
+}
+
+#custom-arrow6 {
+    background: @primary;
+    color: @accent-content;
+    font-size: 16pt;
+}
+
+#network {
+    background: @primary;
+    padding-right: 4px;
+}
+
+#custom-arrow7 {
+    background: @primary-content;
+    color: @primary;
+    font-size: 16pt;
+}
+
+#custom-power-mode {
+    background: @primary-content;
+    padding-right: 16px;
+}
+
+#custom-arrow8 {
+    background: @text-dark;
+    color: @primary-content;
+    font-size: 16pt;
+}
+
+#tray {
+    background: @text-dark;
+    padding-right: 4px;
+}
+
+#custom-arrow9 {
+    background: transparent;
+    color: @text-dark;
+    font-size: 16pt;
+}

@@ -1,0 +1,281 @@
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    font-family: "FiraCode Nerd Font", "JetBrains Mono", sans-serif;
+    font-size: 14px;
+}
+
+window#waybar {
+    background: transparent;
+    transition: background-color 0.2s ease;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#waybar.empty #window {
+    background-color: transparent;
+}
+
+/* Common container styles for all modules */
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 4px 8px;
+    border-radius: 10px;
+    background: alpha(@base-100, 0.5);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6),
+                inset 0 0 0 1px alpha(white, 0.05);
+    border: 1px solid alpha(white, 0.1);
+    padding: 0 2px;
+    -webkit-backdrop-filter: blur(10px);
+}
+
+#window {
+    color: @text-dark;
+    padding: 0px 8px;
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Workspaces */
+#workspaces button {
+    color: @text-dark;
+    padding: 0px 5px;
+    background: transparent;
+}
+
+#workspaces button.active {
+    color: @primary;
+    background: alpha(@base-100, 0.5);
+}
+
+#workspaces button.urgent {
+    color: @error;
+}
+
+#workspaces button:hover {
+    background: alpha(@base-100, 0.5);
+    color: @text-dark;
+}
+
+/* Clock */
+#clock.time {
+    color: @text-dark;
+    border-radius: 0 8px 8px 0;
+    padding: 0px 8px;
+}
+
+#clock.date {
+    color: @text-dark;
+    border-radius: 8px 0px 0px 8px;
+    padding: 0px 8px;
+}
+
+#clock.date:hover {
+    background-color: alpha(@primary-content, 0.8);
+    color: @base-100;
+}
+
+/* Right side modules group - unified container */
+#custom-power-mode,
+#group-expander,
+#tray,
+#pulseaudio,
+#battery,
+#custom-power-button {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+}
+
+/* Group/expander container - fixed sizing */
+#group-expander {
+    padding: 4px 8px;
+    transition: all 0.2s ease;
+}
+
+/* Expander arrow inside the group */
+#custom-expander {
+    color: @text-dark;
+    background-color: transparent;
+}
+
+#custom-expander:hover {
+    background-color: alpha(@base-100, 0.5);
+}
+
+/* Endpoint separator */
+#custom-endpoint {
+    color: transparent;
+    text-shadow: 0px 0px 1.5px @text-dark;
+    background-color: transparent;
+    padding: 0px 2px;
+}
+
+/* Tray */
+#tray {
+    padding: 0px 4px;
+    border-radius: 0;
+    border-right: none;
+    margin-left: 0;
+}
+
+/* Pulseaudio */
+#pulseaudio {
+    color: @primary-content;
+    padding: 0px 4px;
+    border-radius: 0;
+    border-right: none;
+    margin-left: 0;
+}
+
+#pulseaudio.muted {
+    color: @text-dark;
+}
+
+/* Battery */
+#battery {
+    color: @success;
+    padding: 0px 4px;
+    border-radius: 0;
+    border-right: none;
+    margin-left: 0;
+}
+
+#battery.warning {
+    color: @warning-100;
+}
+
+#battery.critical {
+    color: @base-100;
+    animation: blink-critical 1s infinite alternate;
+}
+
+#battery.charging {
+    color: @success;
+}
+
+/* Power button - special hover effect */
+#custom-power-button {
+    color: @error;
+    padding: 0px 8px;
+    border-radius: 0 8px 8px 0;
+    margin-left: 0;
+}
+
+#custom-power-button:hover {
+    color: @base-100;
+    background-color: alpha(@error, 0.8);
+}
+
+/* Drawer content styling (when expanded) - fixed sizing */
+#group-expander drawer {
+    background-color: transparent;
+    border-radius: 0;
+    border-right: none;
+    margin: 0;
+    padding: 0;
+}
+
+#group-expander drawer > box {
+    padding: 0px 5px;
+    background-color: transparent;
+}
+
+/* Additional modules that will appear in the drawer */
+#memory,
+#cpu,
+#temperature,
+#network {
+    color: @text-dark;
+    padding: 4px 8px;
+    background-color: transparent;
+    margin: 0;
+    transition: all .3s ease;
+}
+
+#network:hover {
+    background-color: alpha(@base-100, 0.5);
+}
+
+#memory {
+    color: @accent;
+}
+
+#cpu {
+    color: @success;
+}
+
+#temperature {
+    color: @warning-100;
+}
+
+#network {
+    color: @secondary;
+}
+
+/* Power Mode module */
+#custom-power-mode {
+    color: @secondary;
+    padding: 4px 8px;
+}
+
+#custom-power-mode:hover {
+    color: @primary;
+}
+
+/* Specific styles for different power modes */
+#custom-power-mode.power-saver {
+    color: @success;
+}
+
+#custom-power-mode.power-saver:hover {
+    color: @accent;
+}
+
+#custom-power-mode.balanced {
+    color: @warning;
+}
+
+#custom-power-mode.balanced:hover {
+    color: @warning-100;
+}
+
+#custom-power-mode.performance {
+    color: @error;
+}
+
+#custom-power-mode.performance:hover {
+    color: @error;
+}
+
+#custom-power-mode.unknown {
+    color: @text-dark;
+}
+
+#custom-power-mode.unknown:hover {
+    color: @text-dark;
+}
+
+/* Tooltips */
+tooltip {
+    background: alpha(@base-100, 0.8);
+    border: 1px solid alpha(@primary, 0.5);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+tooltip label {
+    color: @text-dark;
+    font-size: 14px;
+}
+
+@keyframes blink-critical {
+    to { color: @error; }
+}
