@@ -46,7 +46,7 @@
     "clock#date": {
         "interval": 20,
         "format": " {:%a %d %b}",
-        "on-click": "flatpak run org.gnome.Calendar",
+        "on-click": "rofi -show calendar -modi 'calendar:~/.local/bin/rofi-calendar.sh' -theme ~/.config/rofi/calendar.rasi -location 3 -yoffset 38",
         "tooltip": false
     },
     
@@ -90,7 +90,7 @@
 
     "memory": {
         "interval": 5,
-        "format": " {used:0.1f}G/{total:0.1f}G",
+        "format": " {used:0.1f}G/{total:0.1f}G",
         "tooltip": false
     },
     
@@ -127,9 +127,10 @@
     "network": {
 		"interval": 5,
 		"format-wifi": " {essid}",
-		"format-ethernet": " {ifname}",
+		"format-ethernet": "󰌗 {ifname}",
 		"format-disconnected": "No connection",
-		"format-alt": " {ipaddr}/{cidr}",
+		"format-alt": "󰩟 {ipaddr}/{cidr}",
+        "on-click-right": "nmrs",
 		"tooltip": false
 	},
     
