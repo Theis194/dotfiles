@@ -17,7 +17,8 @@ cd ~/dotfiles
 ### 3. Bootstrap
 
 ```bash
-bootstrap.sh
+chmod +x ./bootstrap.sh
+./bootstrap.sh
 ```
 
 ## Grub Theme
