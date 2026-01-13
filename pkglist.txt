@@ -192,6 +192,7 @@ slurp
 smartmontools
 sof-firmware
 spotify-launcher
+stow
 sudo
 sway
 sysfsutils
