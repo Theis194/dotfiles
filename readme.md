@@ -14,10 +14,10 @@ git clone --recurse-submodules https://github.com/yourusername/dotfiles.git ~/do
 cd ~/dotfiles
 ```
 
-### 3. Stow
+### 3. Bootstrap
 
 ```bash
-stow nvim fish dunst ...
+bootstrap.sh
 ```
 
 ## Grub Theme
