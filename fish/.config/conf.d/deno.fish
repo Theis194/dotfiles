@@ -1,1 +1,0 @@
-source "/home/theis/.deno/env.fish"
