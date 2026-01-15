@@ -1,0 +1,17 @@
+/**
+ *
+ * Author : Theis
+ * Github : @theis194
+ * 
+ * Colors
+ **/
+
+* {
+    background:     #1F1F28BF;
+    background-alt: #2A2A37BF;
+    foreground:     #DCD7BAFF;
+    selected:       #C8C094FF;
+    active:         #98BB6CFF;
+    urgent:         #C34043FF;
+}
+

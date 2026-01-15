@@ -1,21 +1,22 @@
 [global]
-frame_color = "#8aadf4"
-separator_color= frame
-highlight = "#8aadf4"
+frame_color = "#7E9CD8"    # crystalBlue
+separator_color = frame
+highlight = "#7AA89F"      # waveAqua2
 
 origin = top-center
 corner_radius = 5
 markup = full
 
 [urgency_low]
-background = "#24273a"
-foreground = "#cad3f5"
+background = "#363646"     # sumiInk3
+foreground = "#DCD7BA"     # fujiWhite
+frame_color = "#727169"    # fujiGray
 
 [urgency_normal]
-background = "#24273a"
-foreground = "#cad3f5"
+background = "#363646"     # sumiInk3
+foreground = "#DCD7BA"     # fujiWhite
 
 [urgency_critical]
-background = "#24273a"
-foreground = "#cad3f5"
-frame_color = "#f5a97f"
+background = "#363646"     # sumiInk3
+foreground = "#DCD7BA"     # fujiWhite
+frame_color = "#C34043"    # autumnRed

@@ -60,7 +60,10 @@
         "format-charging": " {capacity}%",
         "format-full": " {capacity}%",
         "format-icons": ["", "", "", "", ""],
-        "tooltip": false
+        "tooltip": false,
+        "exec": "~/.config/waybar/battery.sh",
+        "interval": 30,
+        "return-type": "json"
     },
     
     "tray": {
